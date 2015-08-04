@@ -84,5 +84,20 @@ public class InfoFrame extends JFrame {
 		});
 		btnNachUpdatesSuchen.setBounds(10, 195, 160, 25);
 		contentPane.add(btnNachUpdatesSuchen);
+		
+		JButton btnMitmachen = new JButton("Mitmachen");
+		btnMitmachen.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				
+				try {
+					Desktop.getDesktop().browse(new URI("https://github.com/BleuzenYT/TowerDefense"));
+				} catch (IOException | URISyntaxException e) {
+					System.err.println("Fehler: " + e.getMessage());
+				}
+				
+			}
+		});
+		btnMitmachen.setBounds(314, 196, 110, 23);
+		contentPane.add(btnMitmachen);
 	}
 }
