@@ -194,7 +194,7 @@ public class Screen extends JPanel implements Runnable {
 			}
 			
 			if(isWin && !isGameEnding) {
-				String levelWonMessage = "Du das Level erfolgreich abgeschlossen! Bitte warte auf das Nächste ...";
+				String levelWonMessage = "Du das Level erfolgreich abgeschlossen! Bitte warte auf das NÃ¤chste ...";
 				int textSize = 26;
 				int right = 18;
 				int down = 70;
@@ -210,7 +210,7 @@ public class Screen extends JPanel implements Runnable {
 			}
 			
 			if(isGameEnding) {
-				String gameWonMessage = "Du hast alle Level dieser Version dieses Spieles geschafft, bitte drücke Esc!";
+				String gameWonMessage = "Du hast alle Level dieser Version dieses Spieles geschafft, bitte drÃ¼cke Esc!";
 				int textSize = 26;
 				int right = 18;
 				int down = 70;

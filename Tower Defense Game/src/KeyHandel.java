@@ -50,14 +50,8 @@ public class KeyHandel implements MouseMotionListener, MouseListener, KeyListene
 		if(e.getKeyCode() == KeyEvent.VK_ENTER) {
 			if(Screen.runGame) {
 				Screen.runGame = false;
-				if(a.Music) {
-					Frame.musicPlayer.close();	
-				}
 			} else {
 				Screen.runGame = true;
-				if(a.Music) {
-					Frame.playBackgroundMusic();	
-				}
 			}
 		}
 	}

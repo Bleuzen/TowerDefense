@@ -15,13 +15,14 @@ public class Save {
 				while(loadScanner.hasNext()) {
 
 					Screen.spawnTime = loadScanner.nextInt();
-					Mob.walkSpeed = (loadScanner.nextInt()) * 2;
-					Mob.walkSpeedAfterHalf = (loadScanner.nextInt()) * 2;
+					Mob.walkSpeed = (loadScanner.nextInt());
 					Screen.killsToWin = loadScanner.nextInt();
 					Block.lessMoney = loadScanner.nextInt();
 					Screen.coinage = loadScanner.nextInt();
 					
 					Store.buttonPrice[0] = loadScanner.nextInt();
+					
+					Value.deathReward[0] = loadScanner.nextInt();
 					
 					for(int y = 0; y < Screen.room.block.length; y++) {
 						for(int x = 0; x < Screen.room.block[0].length; x++) {

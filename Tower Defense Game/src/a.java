@@ -26,7 +26,6 @@ public class a extends JFrame {
 	private JPanel contentPane;
 	
 	public static boolean Fullscreen = false;
-	public static boolean Music = false;
 	
 	InfoFrame infoFrame = new InfoFrame();
 
@@ -48,10 +47,19 @@ public class a extends JFrame {
 			
 		} else {
 			
-			if(args[0].equalsIgnoreCase("-720p")) {
+			String argsStr = "";
+			for(int i = 0; args.length > i; i++) {
+				argsStr += args[i];
+			}
+			
+			if(argsStr.contains("-fullscreen")) {
+				Fullscreen = true;
+			}
+			
+			if(argsStr.contains("-720p")) {
 				Frame.BigRes = false;
 				Frame.main();	
-			} else if(args[0].equalsIgnoreCase("-1440p")) {
+			} else if(argsStr.contains("-1440p")) {
 				Frame.BigRes = true;
 				Frame.main();
 			} else {
@@ -61,6 +69,7 @@ public class a extends JFrame {
 				
 				System.out.println("-720p");
 				System.out.println("-1440p");
+				System.out.println("-fullscreen");
 				
 				System.out.println();
 			}
@@ -101,13 +110,6 @@ public class a extends JFrame {
 		chckbxVollbild.setSelected(true);
 		chckbxVollbild.setFont(new Font("Cambria Math", Font.PLAIN, 12));
 		
-		JCheckBox chckbxMusik = new JCheckBox("Musik");
-		chckbxMusik.setSelected(true);
-		chckbxMusik.setFont(new Font("Cambria Math", Font.PLAIN, 12));
-		chckbxMusik.setBackground(Color.GREEN);
-		chckbxMusik.setBounds(6, 86, 90, 23);
-		contentPane.add(chckbxMusik);
-		
 		JButton btnSpielen = new JButton("Spielen");
 		btnSpielen.setForeground(Color.DARK_GRAY);
 		btnSpielen.setBackground(Color.ORANGE);
@@ -117,10 +119,6 @@ public class a extends JFrame {
 				
 				if(comboBoxRes.getSelectedItem().equals(resForComboBox[1])) {
 					Frame.BigRes = true;
-				}
-				
-				if(chckbxMusik.isSelected()) {
-					Music = true;
 				}
 				
 				if(chckbxVollbild.isSelected()) {

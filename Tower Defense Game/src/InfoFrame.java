@@ -18,7 +18,7 @@ import javax.swing.border.EmptyBorder;
 @SuppressWarnings("serial")
 public class InfoFrame extends JFrame {
 
-	public static String version = "0.0.1";
+	public static String version = "0.0.1.2";
 	
 	private JPanel contentPane;
 
@@ -27,7 +27,7 @@ public class InfoFrame extends JFrame {
 		setAlwaysOnTop(true);
 		setTitle(Frame.Titel + " - Info");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		setBounds(100, 100, 450, 270);
+		setBounds(100, 100, 340, 240);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -42,15 +42,6 @@ public class InfoFrame extends JFrame {
 		lblEntwickler.setFont(new Font("Segoe UI Black", Font.PLAIN, 14));
 		lblEntwickler.setBounds(10, 60, 95, 26);
 		contentPane.add(lblEntwickler);
-		
-		JLabel lblHelfer = new JLabel("Helfer:");
-		lblHelfer.setFont(new Font("Segoe UI Black", Font.PLAIN, 14));
-		lblHelfer.setBounds(10, 110, 70, 26);
-		contentPane.add(lblHelfer);
-		
-		JLabel lblPerentyMusik = new JLabel("Perenty - Musik");
-		lblPerentyMusik.setBounds(200, 118, 160, 14);
-		contentPane.add(lblPerentyMusik);
 		
 		JLabel lblBleuzen = new JLabel("Bleuzen");
 		lblBleuzen.setBounds(200, 68, 160, 14);
@@ -67,7 +58,7 @@ public class InfoFrame extends JFrame {
 				JFrame frame = new JFrame();
 				frame.setAlwaysOnTop(true);
 				if(UpdateChecker.updateNeeded()) {
-					int auswahl = JOptionPane.showConfirmDialog(frame, "<html>Eine neuere Version ist verfügbar! <br> Jetzt herunterladen?</html>", "BJTest", JOptionPane.YES_NO_OPTION);
+					int auswahl = JOptionPane.showConfirmDialog(frame, "<html>Eine neuere Version ist verfÃ¼gbar! <br> Jetzt herunterladen?</html>", "BJTest", JOptionPane.YES_NO_OPTION);
 					if(auswahl == JOptionPane.YES_OPTION) {
 						try {
 							Desktop.getDesktop().browse(new URI(new UpdateChecker().downloadLink));
@@ -82,11 +73,11 @@ public class InfoFrame extends JFrame {
 				
 			}
 		});
-		btnNachUpdatesSuchen.setBounds(10, 195, 160, 25);
+		btnNachUpdatesSuchen.setBounds(10, 166, 160, 25);
 		contentPane.add(btnNachUpdatesSuchen);
 		
-		JButton btnMitmachen = new JButton("Mitmachen");
-		btnMitmachen.addActionListener(new ActionListener() {
+		JButton btnGitHub = new JButton("GitHub");
+		btnGitHub.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				
 				try {
@@ -97,7 +88,7 @@ public class InfoFrame extends JFrame {
 				
 			}
 		});
-		btnMitmachen.setBounds(314, 196, 110, 23);
-		contentPane.add(btnMitmachen);
+		btnGitHub.setBounds(204, 167, 110, 23);
+		contentPane.add(btnGitHub);
 	}
 }

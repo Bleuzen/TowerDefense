@@ -31,9 +31,7 @@ public class UpdateChecker {
 			
 			if(onlineVersion > localVersion) {
 				update = true;	
-			} else {
-				update = false;
-			}	
+			}
 		} catch (Exception e) {
 			System.err.println("Fehler");
 		}
