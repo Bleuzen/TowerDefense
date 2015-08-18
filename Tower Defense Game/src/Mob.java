@@ -135,10 +135,14 @@ public class Mob extends Rectangle {
 							}
 							
 							if(!hasDownward) {
-								// Problem
+								//Problem
 								int realYC = yC;
 								if(realYC >= 1) {
 									realYC -= 1;
+								}
+								if(realYC == -1) {
+									realYC += 2;
+									direction = downward;
 								}
 								//TODO
 								System.out.println(realYC);
@@ -173,7 +177,7 @@ public class Mob extends Rectangle {
 						hasDownward = false;
 						hasLeft = false;
 						hasRight = false;
-						mobWalk -= Screen.room.blockSize;
+						mobWalk = 0;
 					}
 					
 			        if(Frame.BigRes) {
